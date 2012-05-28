@@ -3,7 +3,7 @@
 </div>
 
 <?php if (is_home() || is_category()) { ?>
-<script src="<?php bloginfo('template_url'); ?>/js/jquery.waterfall.js"></script>
+<script>seajs.use('<?php bloginfo('template_url'); ?>/js/waterpress.js');</script>
 <?php } ?>
 
 </body>

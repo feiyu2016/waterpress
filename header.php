@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title><?php bloginfo( 'name' ); ?></title>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/seajs.js"></script>
 </head>
 <body>
 <div id="header">
