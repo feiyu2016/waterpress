@@ -12,11 +12,7 @@
         <div id="loading">加 载 中 ...</div>
         <? } ?>
     </div>
-
-    <?php if (is_home() || is_category()) { ?>
     <div id="more"><span> 查 看 更 多 >> </span></div>
-    <?php } ?>
-
     <script id="tpl" type="text/template">
         <div class="item" id="item-${id}" style="top:${top}px;left:${left}px;">
            <div class="title"><a href="${href}">${title}</a></div>
