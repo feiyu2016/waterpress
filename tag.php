@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying index.
+ * The template for displaying tag.
  */
 ?>
 
@@ -9,11 +9,9 @@
     <?php get_header(); ?>
     <div id="loading">加 载 中 ...</div>
     <div id="container">
-        <!-- tag cloud -->
         <div id="tag-cloud">
             <?php wp_tag_cloud('smallest=13&largest=13&unit=px'); ?>
         </div>
-
     </div>
     <div id="more"><span> 查 看 更 多 >> </span></div>
     <script id="tpl" type="text/template">
@@ -32,10 +30,10 @@
         // header('Content-type: text/json');
         $doc_root = $_SERVER['DOCUMENT_ROOT'];
         $posts_num = $_GET['postsNum'];
-        $offset = $_GET['offset'];
+        $tag = array_key_exists('tag', $_GET) ? $_GET['tag'] : -1;
         $json = array();
 
-        query_posts('showposts='. $posts_num .'&offset='. $offset);
+        query_posts('tag='. $tag .'&showposts='. $posts_num);
         if ( have_posts() ) {
             while ( have_posts() ) : the_post();
 

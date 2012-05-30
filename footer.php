@@ -2,7 +2,7 @@
     <p class="copyright">©2012 MEIRUXU.COM. ALL RIGHTS RESERVED. PROUDLY POWERED BY WORDPRESS. </p>
 </div>
 
-<?php if (is_home() || is_category()) { ?>
+<?php if (is_home() || is_category() || is_tag()) { ?>
 <script>seajs.use('<?php bloginfo('template_url'); ?>/js/waterpress.js');</script>
 <?php } ?>
 

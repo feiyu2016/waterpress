@@ -83,19 +83,45 @@ body {font:13px 'Century Gothic', 'Microsoft YaHei', Verdana, Tahoma, Lucida Gra
 }
 /* }}} */
 /* #container {{{ */
-#container {
-    margin: 20px auto 30px;
-    min-height: 750px;
-} 
 #loading {
+    position: absolute;
+    top: 240px;
+    left: 48%;
     width: 75px;
     padding: 8px 25px;
-    margin: 240px auto 0;
     color: #666;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(34,25,25,.3);
     -webkit-box-shadow: 0 0 5px rgba(34,25,25,.4);
     -moz-box-shadow: 0 0 5px rgba(34,25,25,.4);
+}
+#container {
+    margin: 30px auto 30px;
+    min-height: 750px;
+} 
+#tag-cloud {
+    position: absolute;
+    width: 190px;
+    padding: 12px 14px;
+    margin: 0 7px 14px;
+    border: 1px solid #E5E5E5;
+    border-top: 2px solid #16B014;
+    box-shadow: 0 0 5px #EEE;
+    background-color: white;
+}
+#tag-cloud a {
+    display: block;
+    margin: 5px;
+    float: left;
+    padding: 3px 12px;
+    *padding: 3px 10px;
+    color: #333;
+    line-height: 18px;
+    border: 1px solid #F2F2F2;
+    box-shadow: 1px 1px 2px #F2F2F2;
+}
+#tag-cloud a:hover {
+    color: #16B014;
 }
 #container .item {
     position: absolute;

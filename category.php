@@ -7,10 +7,11 @@
 <?php if ( !array_key_exists('postsNum', $_GET) ) : ?>
 
     <?php get_header(); ?>
+    <div id="loading">加 载 中 ...</div>
     <div id="container">
-        <?php if (is_home()) { ?>
-        <div id="loading">加 载 中 ...</div>
-        <? } ?>
+        <div id="tag-cloud">
+            <?php wp_tag_cloud('smallest=13&largest=13&unit=px'); ?>
+        </div>
     </div>
     <div id="more"><span> 查 看 更 多 >> </span></div>
     <script id="tpl" type="text/template">

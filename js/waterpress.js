@@ -13,32 +13,42 @@ define(function(require, exports, module) {
     var con = $('#container'),
         win = $(window),
         colWidth = 234,
-        arr_height = [],
+        arr_height = [], // 用于记录每一列的总高度
         id = 0, // item's id
 
         isSend = 0, // 用于判断滚动时是否发送请求
         offset = 0, // 在数据库中的偏移位置，默认为0
         maxCols = Math.floor(win.width() / colWidth), // 最大列数
 
+        tag = $('#tag-cloud'),
         tpl = $('#tpl').html(),
         headerHeight = $('#header').height();
 
     for (var x = 0; x < maxCols; x++) {
         arr_height[x] = 0;
     }
+
+    if (tag) {
+        arr_height[0] += 42 + tag.height();
+    }
     
     con.css({position: 'relative', width: maxCols * colWidth +'px'});
     $('#header .inner').css({width: maxCols * colWidth +'px'});
 
     function getData(postsNum) {
-    	var cat = '', 
+    	var cat = '',  tag = '',
     		loc = location.href;
-    	if (loc.indexOf('cat=') != -1) {
-    		loc.replace(/cat=([^\&]+)/i, function(a, b){
-    			cat = '&cat='+ b;
+        if (loc.indexOf('cat=') != -1) {
+            loc.replace(/cat=([^\&]+)/i, function(a, b){
+                cat = '&cat='+ b;
+            });
+        }
+    	if (loc.indexOf('tag=') != -1) {
+    		loc.replace(/tag=([^\&]+)/i, function(a, b){
+    			tag = '&tag='+ b;
     		});
     	}
-        $.getJSON('index.php?postsNum='+ postsNum +'&offset='+ offset + cat, function(data) {
+        $.getJSON('index.php?postsNum='+ postsNum +'&offset='+ offset + cat + tag, function(data) {
             if (!data) return;
             if (id == 0) $('#loading').hide(10);
             $.each(data, function(i, item) {
@@ -115,6 +125,10 @@ define(function(require, exports, module) {
         maxCols = Math.floor(win.width() / colWidth);
         for (var x = 0; x < maxCols; x++) {
             arr_height[x] = 0;
+        }
+
+        if (tag) {
+            arr_height[0] += 42 + tag.height();
         }
 
         con.css({position: 'relative', width: maxCols * colWidth +'px'});
