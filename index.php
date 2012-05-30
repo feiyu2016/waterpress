@@ -15,8 +15,8 @@
     <div id="more"><span> 查 看 更 多 >> </span></div>
     <script id="tpl" type="text/template">
         <div class="item" id="item-${id}" style="top:${top}px;left:${left}px;">
-           <div class="title"><a href="${href}">${title}</a></div>
-           <div class="image"><a href="${href}"><img width="190" height="${height}" src="${image}" alt="${title}" /></a></div>
+           <div class="title"><a href="${href}" target="_blank">${title}</a></div>
+           <div class="image"><a href="${href}" target="_blank"><img width="190" height="${height}" src="${image}" alt="${title}" /></a></div>
            <div class="excerpt">${excerpt}</div>
            <div class="attr"><a class="category" href="">${category}</a> / <a class="comments" href="">${comments} COMMENTS</a></div>
         </div>
