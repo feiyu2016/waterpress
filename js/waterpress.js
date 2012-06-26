@@ -69,13 +69,13 @@ define(function(require, exports, module) {
                 loadData(con, 15);
 
             	// 滚动加载3次后，主动点击'更多'按钮时才加载
-            	loaded += 1;
-    	        if (loaded == 3) {
-    	        	win.unbind('scroll');
-    			    $('#more').show().click(function(){
-    			        loadMore();
-    	    		});
-    	        }
+                // loaded += 1;
+                // if (loaded == 3) {
+                    // win.unbind('scroll');
+                    // $('#more').show().click(function(){
+                        // loadMore();
+                    // });
+                // }
             }
         }
     }();
@@ -139,17 +139,21 @@ define(function(require, exports, module) {
         return x;
     }
 
-    // 分类否标签
+    // 分类、标签
     function hasProp() {
-        var loc = location.href;
+        var loc = location.href,
+            cat = '',
+            tag = '';
         if (loc.indexOf('cat=') != -1) {
             loc.replace(/cat=([^\&]+)/i, function(a, b) {
-                return '&cat='+ b;
+                cat = b;
             });
+            return '&cat='+ cat;
         } else if (loc.indexOf('tag=') != -1) {
             loc.replace(/tag=([^\&]+)/i, function(a, b) {
-                return '&tag='+ b;
+                tag = b;
             });
+            return '&tag='+ tag;
         } else {
             return '';
         }

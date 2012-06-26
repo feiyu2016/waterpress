@@ -1,8 +1,8 @@
 /*
 Theme Name: WaterPress
-Theme URI: http://meiruxu.com/
-Author: Junyi Zhang
-Author URI: http://meiruxu.com/
+Theme URI: http://junyi.me/
+Author: Junyi
+Author URI: http://junyi.me/
 Description:
 Version: 1.0
 License: GNU General Public License
@@ -452,16 +452,16 @@ body {font:13px 'Century Gothic', 'Microsoft YaHei', Verdana, Tahoma, Lucida Gra
 }
 /* }}} */
 /* #footer {{{ */
-#footer p {
+#footer {
     text-align: center;
+    padding: 20px 0 10px;
+    color: #7A7A7A;
 }
-#footer .copyright {
-    padding: 20px 0 5px;
-    color: #bbb;
-    border-top: 1px solid #e5e5e5;
+#footer a {
+    color: #363636;
 }
 /* }}} */
-
+/* #error404 {{{ */
 #error404 {
     width: 1000px;
     margin: 20px auto;
@@ -477,3 +477,4 @@ body {font:13px 'Century Gothic', 'Microsoft YaHei', Verdana, Tahoma, Lucida Gra
     margin-right: 5px;
     line-height: 22px;
 }
+/* }}} */
