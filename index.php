@@ -22,7 +22,7 @@
             {@if height > 0}
             <div class="image"><a href="${href}" target="_blank"><img width="190" height="${height}" src="${image}" alt="${title}" /></a></div>
             {@/if}
-            <div class="excerpt">${excerpt}</div>
+            <div class="excerpt"><a href="${href}" target="_blank">${excerpt}</a></div>
             <div class="attr"><a class="category" href="">${category}</a> / <a class="comments" href="">${comments} 评论</a></div>
         </div>
     </script>
